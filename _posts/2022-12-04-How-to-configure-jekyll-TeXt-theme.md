@@ -179,11 +179,9 @@ repository: user_name/repo_name
 ## Setting the _button.scss file
 
 ### This file is located in **_sass/common/components/**
-
 ![IMAGE-1](https://raw.githubusercontent.com/thd3r/thd3r.github.io/dev/assets/images/writeup/2022-12-04-How-to-configure-jekyll-TeXt-theme/content/images/button/image1.png)
 
 ### Some functions will have their values changed
-
 ![IMAGE-2](https://raw.githubusercontent.com/thd3r/thd3r.github.io/dev/assets/images/writeup/2022-12-04-How-to-configure-jekyll-TeXt-theme/content/images/button/image2.png)
 
 ![IMAGE-3](https://raw.githubusercontent.com/thd3r/thd3r.github.io/dev/assets/images/writeup/2022-12-04-How-to-configure-jekyll-TeXt-theme/content/images/button/image3.png)
@@ -195,11 +193,9 @@ repository: user_name/repo_name
 **Why dark.scss?** because in the _config.yml configuration file in the **text_skin:** section I chose **dark**
 
 ### The image below will explain some of the functions in the _dark.scss file
-
 ![IMAGE-1](https://raw.githubusercontent.com/thd3r/thd3r.github.io/dev/assets/images/writeup/2022-12-04-How-to-configure-jekyll-TeXt-theme/content/images/skins/image1.png)
 
 ### In the **$select-color** function section on line 50 change **$main-color-1** to **#fff**
-
 ![IMAGE-2](https://raw.githubusercontent.com/thd3r/thd3r.github.io/dev/assets/images/writeup/2022-12-04-How-to-configure-jekyll-TeXt-theme/content/images/skins/image2.png)
 
 ## Setting the _variables.scss file
