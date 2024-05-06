@@ -166,21 +166,22 @@ repository: user_name/repo_name
 
 ## Setting the _button.scss file
 ### This file is located in `_sass/common/components/`
-[IMAGE LOCATE DIR]
+![IMAGE-1](https://raw.githubusercontent.com/thd3r/thd3r.github.io/dev/assets/images/writeup/2022-12-04-How-to-configure-jekyll-TeXt-theme/content/images/button/image1.png)
 
 ### Some functions will have their values changed
-[IMAGE EXAM]
-[IMAGE YANG AKAN DI UBAH]
+![IMAGE-2](https://raw.githubusercontent.com/thd3r/thd3r.github.io/dev/assets/images/writeup/2022-12-04-How-to-configure-jekyll-TeXt-theme/content/images/button/image2.png)
+
+![IMAGE-3](https://raw.githubusercontent.com/thd3r/thd3r.github.io/dev/assets/images/writeup/2022-12-04-How-to-configure-jekyll-TeXt-theme/content/images/button/image3.png)
 
 ## Setting the _dark.scss file
 ### This file is located in `_sass/skins/`
 **Why dark.scss?** because in the _config.yml configuration file in the `text_skin:` section I chose `dark`
 
 ### The image below will explain some of the functions in the _dark.scss file
-[IMAGE EXPLAIN]
+![IMAGE-1](https://raw.githubusercontent.com/thd3r/thd3r.github.io/dev/assets/images/writeup/2022-12-04-How-to-configure-jekyll-TeXt-theme/content/images/skins/image1.png)
 
 ### In the `$select-color` function section on line 50 change `$main-color-1` to `#fff`
-[IMAGE BEFORE-AFTER]
+![IMAGE-2](https://raw.githubusercontent.com/thd3r/thd3r.github.io/dev/assets/images/writeup/2022-12-04-How-to-configure-jekyll-TeXt-theme/content/images/skins/image2.png)
 
 ## Setting the _variables.scss file
 ### This file is located in `_sass/common/`
@@ -188,7 +189,8 @@ In the `_variables.scss` file you can modify the font and add external fonts
 
 ### Modify and add external fonts
 I will modify the font and add the font via external path and I use the font `FiraCode-Regular.ttf`
-[IMAGE VARIABLE]
+
+![IMAGE-1](https://raw.githubusercontent.com/thd3r/thd3r.github.io/dev/assets/images/writeup/2022-12-04-How-to-configure-jekyll-TeXt-theme/content/images/variable/image1.png)
 
 To add external fonts you must add `some-font.ttf` in the root folder
 
@@ -316,8 +318,7 @@ I will add this function in the final line
 This CSS file contains configuration regarding author link color settings where you can change the text color and icon color in this file
 
 ### Some functions will have their values changed
-[IMAGE-AUTHOR-LINKS]
-
+![IMAGE-AUTHOR-LINKS](https://raw.githubusercontent.com/thd3r/thd3r.github.io/dev/assets/images/writeup/2022-12-04-How-to-configure-jekyll-TeXt-theme/content/images/author-links/image1.png)
 
 ## Setting the _footer.scss file
 ### This file is located in `_sass/components/`
@@ -413,6 +414,9 @@ This time we will upload a logo and add a favicon
 ### Add Logo
 In the `_includes/svg/` folder delete the default `logo.svg` and add your logo
 
+### Add favicon.ico file
+We can add `favicon.ico` file in root path and `assets/` path
+
 ### Setting the favicon.html file
 This file is located in `_includes/head/`
 
@@ -472,9 +476,6 @@ Create a browserconfig.xml file in the `assets/` path with the following content
     </msapplication>
 </browserconfig>
 ```
-
-### Add favicon.ico file
-We can add `favicon.ico` file in root path and `assets/` path
 
 > Credit [@kitian616](https://github.com/kitian616), Thank you for making it better.
 
