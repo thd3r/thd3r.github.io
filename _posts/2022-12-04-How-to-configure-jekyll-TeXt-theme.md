@@ -12,6 +12,10 @@ tags:
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
+<h1 style="text-align: center;">
+  Overview
+</h1>
+
 ## How do themes work?
 Jekyll themes allow you to contain all the templating and presentational code within a Ruby gem, much in the same way Jekyll plugins are contained. This means the design can be easily applied to a site, used on multiple sites, and the site codebase isn’t cluttered by the presentational layer.
 By nature, Any well structured site that has easily editable content is ‘themeable’ — a layer, or skin, That presents content in the way the owner or creator intended; Jekyll is no different. Pages, posts and any other form of formatted content can be segregated from the templating files.
@@ -29,9 +33,7 @@ By nature, Any well structured site that has easily editable content is ‘theme
 └── index.html
 ```
 
-<em style="text-align: center;">
-  Example of a Jekyll site structure when using a theme gem
-</em>
+Example of a Jekyll site structure when using a theme gem
 
 <h1 style="text-align: center;">
   Quick Start
@@ -47,14 +49,14 @@ To install it with common method, All you need to do is copying all the theme fi
 * If you host your site on GitHub Pages, you can just fork [jekyll-TeXt-theme](https://github.com/kitian616/jekyll-TeXt-theme), then rename the repository to USERNAME.github.io — replacing USERNAME with your GitHub username.
 
 ![Image by @kitian616](https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/docs/assets/images/github-fork.jpg)
-<em style="text-align: center">
+<cite style="text-align: center">
   source: <a href="https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/docs/assets/images/github-fork.jpg">github-fork.jpg</a>
-</em>
+</cite>
 
 ![Image by @kitian616](https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/docs/assets/images/github-rename-repo.jpg)
-<em style="text-align: center">
+<cite style="text-align: center">
   source: <a href="https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/docs/assets/images/github-rename-repo.jpg">github-rename-repo.jpg</a>
-</em>
+</cite>
 
 ### Ruby Gem Method
 * Add this line to your Jekyll site’s **Gemfile**:
@@ -176,7 +178,7 @@ In order for jekyll-github-metadata to know what metadata to fetch it must be ab
 repository: user_name/repo_name
 ```
 
-## Setting the _button.scss file
+## Setting the _button.scss
 
 ### This file is located in **_sass/common/components/**
 ![IMAGE-1](https://raw.githubusercontent.com/thd3r/thd3r.github.io/dev/assets/images/writeup/2022-12-04-How-to-configure-jekyll-TeXt-theme/content/images/button/image1.png)
@@ -186,7 +188,7 @@ repository: user_name/repo_name
 
 ![IMAGE-3](https://raw.githubusercontent.com/thd3r/thd3r.github.io/dev/assets/images/writeup/2022-12-04-How-to-configure-jekyll-TeXt-theme/content/images/button/image3.png)
 
-## Setting the _dark.scss file
+## Setting the _dark.scss
 
 ### This file is located in **_sass/skins/**
 
@@ -198,9 +200,9 @@ repository: user_name/repo_name
 ### In the **$select-color** function section on line 50 change **$main-color-1** to **#fff**
 ![IMAGE-2](https://raw.githubusercontent.com/thd3r/thd3r.github.io/dev/assets/images/writeup/2022-12-04-How-to-configure-jekyll-TeXt-theme/content/images/skins/image2.png)
 
-## Setting the _variables.scss file
+## Setting the _variables.scss 
 
-### This file is located in `_sass/common/`
+### This file is located in **_sass/common/**
 In the **_variables.scss** file you can modify the font and add external fonts
 
 ### Modify and add external fonts
@@ -210,37 +212,29 @@ I will modify the font and add the font via external path and I use the font **F
 
 To add external fonts you must add **some-font.ttf** in the root folder
 
-## Setting the locale.yml and footer.html file
+## Setting the locale.yml and footer.html
 
 ### This file is located in **_data/** and **_includes/**
 Both files configure copyright so here we will modify copyright through those two files
 
-### Modify the locale.yml file
+### Modify the locale.yml 
 
 ```
+// Before
 COPYRIGHT_DATES         : "2021"
+// After
 COPYRIGHT_DATES         : "Change to current year"
 ```
 
-### Modify the footer.html file
+### Modify the footer.html 
+![image-1](https://raw.githubusercontent.com/thd3r/thd3r.github.io/dev/assets/images/writeup/2022-12-04-How-to-configure-jekyll-TeXt-theme/content/images/image1.png)
 
-```
-// Delete
-
-© {{ site,title }} {{ _locale_copyright_dates }},
-Powered by <a title="Jekyll is a simple, blog-aware, static site generator." href="http://jekyllrb.com/">Jekyll</a> & <a
-title="TeXt is a super customizable Jekyll theme." href="https://github.com/kitian616/jekyll-TeXt-theme">TeXt Theme</a>.
-
-// Add
-© {{ _locale_copyright_dates }} {{ site,title }}
-```
-
-## Setting the variables.yml file
+## Setting the variables.yml 
 
 ### This file is located in **_data/**
 This configuration file contains settings about the page
 
-### Modify the variables.yml file
+### Modify the variables.yml
 In this configuration file I will allow **readmore** and disable **comments**
 
 ```
@@ -255,33 +249,17 @@ comment: true
 comment: false
 ```
 
-## Setting the article-footer.html and articles.html file
+## Setting the article-footer.html and articles.html
 
 ### This file is located in **_includes/** and **_layouts/**
 These two files contain the configuration for the article
 
-### Modify the article-footer.html file
+### Modify the article-footer.html 
 I will remove features that I think are not very useful for me but if you need them then leave it like that
 
-```
-// Delete
-{%- if _show_subscribe -%}
-    <div class="article__subscribe">{%- include article/footer/subscribe.html -%}</div>
-  {%- endif -%}
+![image-2](https://raw.githubusercontent.com/thd3r/thd3r.github.io/dev/assets/images/writeup/2022-12-04-How-to-configure-jekyll-TeXt-theme/content/images/image2.png)
 
-  {%- if _license != false -%}
-    {%- assign _data_license = site.data.licenses-%}
-    {%- if site.license -%}
-      {%- assign _license_data = _data_license[site.license] -%}
-    {%- endif -%}
-    {%- if _license != true -%}
-      {%- assign _license_data = _data_license[_license] -%}
-    {%- endif -%}
-    <div class="article__license">{%- include article/footer/license.html license=_license_data -%}</div>
-  {%- endif -%}
-```
-
-### Modify the articles.html file
+### Modify the articles.html 
 
 ```
 // Add
@@ -292,12 +270,12 @@ articles:
   show_info: true
 ```
 
-## Setting the home.html file
+## Setting the home.html
 
 ### This file is located in **_layouts/**
 This file is part of the page configuration
 
-###  Modify the home.html file
+###  Modify the home.html
 I will make changes to line 31
 
 ```
@@ -307,12 +285,12 @@ show_cover: false
 show_cover: true
 ```
 
-## Setting the _text.scss file
+## Setting the _text.scss
 
 ### This file is located in **_sass/common/classes/**
 This CSS file contains configuration regarding text color settings
 
-### Modify the _text.scss file
+### Modify the _text.scss
 I will make changes to line 27
 
 ```
@@ -325,12 +303,12 @@ a:not(.button) {
 }
 ```
 
-## Setting the _article-content.scss file
+## Setting the _article-content.scss
 
 ### This file is located in **_sass/components/**
 This CSS file contains configuration regarding article content settings
 
-### Modify the _article-content.scss file
+### Modify the _article-content.scss
 I will add this function in the final line
 
 ```
@@ -340,7 +318,7 @@ I will add this function in the final line
   }
 ```
 
-## Setting the _author-links.scss file
+## Setting the _author-links.scss
 
 ### This file is located in **_sass/components/**
 This CSS file contains configuration regarding author link color settings where you can change the text color and icon color in this file
@@ -348,12 +326,12 @@ This CSS file contains configuration regarding author link color settings where 
 ### Some functions will have their values changed
 ![IMAGE-AUTHOR-LINKS](https://raw.githubusercontent.com/thd3r/thd3r.github.io/dev/assets/images/writeup/2022-12-04-How-to-configure-jekyll-TeXt-theme/content/images/author-links/image1.png)
 
-## Setting the _footer.scss file
+## Setting the _footer.scss
 
 ### This file is located in **_sass/components/**
 This CSS file contains footer settings
 
-## Modify the _footer.scss file
+### Modify the _footer.scss 
 I will make changes to line 10
 
 ```
@@ -365,78 +343,23 @@ a {
   }
 ```
 
-## Setting the _header.scss file
+## Setting the _header.scss
 
 ### This file is located in **_sass/components/**
 This CSS file contains header settings
 
-### Modify the _header.scss file
+### Modify the _header.scss
 I will make changes to line 16
 
-```
-.header--dark {
-  @extend .text--dark;
-  // Before
-  background: rgba(#000, .15);
-  // After
-  background: rgba(#fff, .15);
-  .navigation__item--active {
-    &::after {
-      // Before
-      @include split-line(bottom, 4px, $text-color-theme-dark);
-      // After
-      @include split-line(bottom, 5px, $text-color-theme-dark);
-    }
-  }
-}
-```
+![image-3](https://raw.githubusercontent.com/thd3r/thd3r.github.io/dev/assets/images/writeup/2022-12-04-How-to-configure-jekyll-TeXt-theme/content/images/image3.png)
 
-## Setting the _tags.scss file
+## Setting the _tags.scss
 
 ### This file is located in **_sass/components/**
 This CSS file contains page tags settings
 
-### Modify the _tags.scss file
-
-```
-.site-tags {
-  .tag-button {
-    // Before
-    @include clickable($text-color-3, $main-color-3, default, default, $text-color-2,$main-color-2, $text-color-2,$main-color-2);
-    // After
-    @include clickable(#fff, $main-color-3, default, default, $text-color-2,$main-color-1, $text-color-2,$main-color-2);
-    & > .tag-button__count {
-      display: inline-block;
-      margin-left: map-get($spacers, 1);
-@@ -10,15 +10,15 @@
-    }
-  }
-  .tag-button-1 {
-    // Before
-    @include clickable($text-color-1, rgba($main-color-1, .4), default, default, $text-color-2,$main-color-2, $text-color-2,$main-color-2);
-    // After
-    @include clickable(#fff, rgba($main-color-1, .4), default, default, $text-color-2,$main-color-2, $text-color-2,$main-color-2);
-  }
-  .tag-button-2 {
-    // Before
-    @include clickable($text-color-1, rgba($main-color-1, .55), default, default, $text-color-2,$main-color-2, $text-color-2,$main-color-2);
-    // After
-    @include clickable(#fff, rgba($main-color-1, .55), default, default, $text-color-2,$main-color-2, $text-color-2,$main-color-2);
-  }
-  .tag-button-3 {
-    // Before
-    @include clickable($text-color-1, rgba($main-color-1, .7), default, default, $text-color-2,$main-color-2, $text-color-2,$main-color-2);
-    // After
-    @include clickable(#fff, rgba($main-color-1, .7), default, default, $text-color-2,$main-color-2, $text-color-2,$main-color-2);
-  }
-  .tag-button-4 {
-    // Before
-    @include clickable($text-color-1, rgba($main-color-1, .9), default, default, $text-color-2,$main-color-2, $text-color-2,$main-color-2);
-    // After
-    @include clickable(#fff, rgba($main-color-1, .9), default, default, $text-color-2,$main-color-2, $text-color-2,$main-color-2);
-  }
-}
-```
+### Modify the _tags.scss 
+![image-4](https://raw.githubusercontent.com/thd3r/thd3r.github.io/dev/assets/images/writeup/2022-12-04-How-to-configure-jekyll-TeXt-theme/content/images/image4.png)
 
 ## Setup Your Logo
 This time we will upload a logo and add a favicon
@@ -446,13 +369,13 @@ This time we will upload a logo and add a favicon
 ### Add Logo
 In the **_includes/svg/** folder delete the default **logo.svg** and add your logo
 
-### Add favicon.ico file
+### Add favicon.ico
 We can add **favicon.ico** file in root path and **assets/** path
 
-### Setting the favicon.html file
+### Setting the favicon.html
 This file is located in **_includes/head/**
 
-### Modify the favicon.html file
+### Modify the favicon.html 
 
 ```
 <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
@@ -475,7 +398,7 @@ The following image is in the **assets/** path
 ### Add necessary images
 After we delete the image above, now we will add an image but in the format described in the image above, simply change the image files but leave the name unchanged.
 
-### Create the site.webmanifest file
+### Create the site.webmanifest
 Create a site.webmanifest file in the **assets/** path with the following contents
 
 ```
@@ -495,7 +418,7 @@ Create a site.webmanifest file in the **assets/** path with the following conten
 }
 ```
 
-### Create the browserconfig.xml file
+### Create the browserconfig.xml
 Create a browserconfig.xml file in the **assets/** path with the following contents
 
 ```
@@ -510,10 +433,44 @@ Create a browserconfig.xml file in the **assets/** path with the following conte
 </browserconfig>
 ```
 
+<h1 style="text-align: center;">
+  Deploy it on github pages
+</h1>
+
+This time we will share what we have done previously to the github page. In this chapter we will also learn to use git commands.
+
+> Git is a very popular version control system used by software developers to manage changes in their source code. This enables development teams to work collaboratively on software projects safely and efficiently.
+
+## Deploying
+Before deploying we have to make sure that we are in that Git repository. When we are in the repository the next step is to create a **dev** branch
+
+Use the following command to create a new branch and deploy it
+
+```
+// Create a new branch
+git checkout -b dev
+// deploy it
+git add *
+git commit -m "setup web"
+git status 
+git push -u origin dev
+```
+
+### After running the command above go to your repository and you will see this information just click **Compare and pull request**
+
+![image-5](https://raw.githubusercontent.com/thd3r/thd3r.github.io/dev/assets/images/writeup/2022-12-04-How-to-configure-jekyll-TeXt-theme/content/images/image5.png)
+
+### Create pull request
+![image-6](https://raw.githubusercontent.com/thd3r/thd3r.github.io/dev/assets/images/writeup/2022-12-04-How-to-configure-jekyll-TeXt-theme/content/images/image6.png)
+
+### Click merge pull request
+![image-7](https://raw.githubusercontent.com/thd3r/thd3r.github.io/dev/assets/images/writeup/2022-12-04-How-to-configure-jekyll-TeXt-theme/content/images/image7.png)
+
+
 > Credit [@kitian616](https://github.com/kitian616), Thank you for making it better.
 
 ## Conclusion
 
-In this article we will learn how to configure several files in the form of yml, css, html formats where we will change, add and delete and also we will learn how to upload a logo and add a favicon
+In this article we learn how to configure several files, upload a logo, add a favicon and also deploy it to a github page
 
 If there is a word or sentence error in this article, please let me know [HERE](https://twitter.com/thd3r_)
