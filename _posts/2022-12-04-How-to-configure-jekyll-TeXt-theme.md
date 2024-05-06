@@ -48,8 +48,14 @@ To install it with common method, All you need to do is copying all the theme fi
 * If you host your site on GitHub Pages, you can just fork [jekyll-TeXt-theme](https://github.com/kitian616/jekyll-TeXt-theme), then rename the repository to USERNAME.github.io — replacing USERNAME with your GitHub username.
 
 ![Image by @kitian616](https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/docs/assets/images/github-fork.jpg)
+<em style="text-align: center">
+  source: https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/docs/assets/images/github-fork.jpg
+</em>
 
 ![Image by @kitian616](https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/docs/assets/images/github-rename-repo.jpg)
+<em style="text-align: center">
+  source: https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/docs/assets/images/github-rename-repo.jpg
+</em>
 
 ### Ruby Gem Method
 * Add this line to your Jekyll site’s **Gemfile**:
@@ -67,6 +73,8 @@ Run `bundle exec jekyll serve` to start the development server, Then you can vis
 <h1 style="text-align: center;">
   Customization
 </h1>
+
+In this chapter we will learn how to configure several files in the form of yml, css, html formats where we will change, add and delete and also we will learn how to upload a logo and add a favicon. We will arrange everything necessary in this chapter
 
 ## Configuration
 Jekyll allows you to concoct your sites in any way you can dream up, and it’s thanks to the powerful and flexible configuration options that this is possible. These options can either be specified in a **_config.yml** file placed in your site’s root directory, Or can be specified as flags for the jekyll executable in the terminal.
@@ -158,15 +166,281 @@ In order for jekyll-github-metadata to know what metadata to fetch it must be ab
 repository: user_name/repo_name
 ```
 
+## Setting the _button.scss file
+### This file is located in `_sass/common/components/`
+[IMAGE LOCATE DIR]
+
+### Some functions will have their values changed
+[IMAGE EXAM]
+[IMAGE YANG AKAN DI UBAH]
+
+## Setting the _dark.scss file
+### This file is located in `_sass/skins/`
+**Why dark.scss?** because in the _config.yml configuration file in the `text_skin:` section I chose `dark`
+
+### The image below will explain some of the functions in the _dark.scss file
+[IMAGE EXPLAIN]
+
+### In the `$select-color` function section on line 50 change `$main-color-1` to `#fff`
+[IMAGE BEFORE-AFTER]
+
+## Setting the _variables.scss file
+### This file is located in `_sass/common/`
+In the `_variables.scss` file you can modify the font and add external fonts
+
+### Modify and add external fonts
+I will modify the font and add the font via external path and I use the font `FiraCode-Regular.ttf`
+[IMAGE VARIABLE]
+
+To add external fonts you must add `some-font.ttf` in the root folder
+
+## Setting the locale.yml and footer.html file
+### This file is located in `_data/` and `_includes/`
+Both files configure copyright so here we will modify copyright through those two files
+
+### Modify the locale.yml file
+```
+COPYRIGHT_DATES         : "2021"
+COPYRIGHT_DATES         : "Change to current year"
+```
+
+### Modify the footer.html file
+```
+// Delete
+© {{ site.title }} {{ _locale_copyright_dates }},
+Powered by <a title="Jekyll is a simple, blog-aware, static site generator." href="http://jekyllrb.com/">Jekyll</a> & <a
+title="TeXt is a super customizable Jekyll theme." href="https://github.com/kitian616/jekyll-TeXt-theme">TeXt Theme</a>.
+// Add
+© {{ _locale_copyright_dates }} {{ site.title }}
+```
+
+## Setting the variables.yml file
+### This file is located in `_data/`
+This configuration file contains settings about the page
+
+### Modify the variables.yml file
+In this configuration file I will allow `readmore` and disable `comments`
+
+```
+// Before
+show_readmore: false
+// After
+show_readmore: true
+
+// Before
+comment: true
+// After
+comment: false
+```
+
+## Setting the article-footer.html and articles.html file
+### This file is located in `_includes/` and `_layouts/`
+These two files contain the configuration for the article
+
+### Modify the article-footer.html file
+I will remove features that I think are not very useful for me but if you need them then leave it like that
+
+```
+// Delete
+{%- if _show_subscribe -%}
+    <div class="article__subscribe">{%- include article/footer/subscribe.html -%}</div>
+  {%- endif -%}
+
+  {%- if _license != false -%}
+    {%- assign _data_license = site.data.licenses-%}
+    {%- if site.license -%}
+      {%- assign _license_data = _data_license[site.license] -%}
+    {%- endif -%}
+    {%- if _license != true -%}
+      {%- assign _license_data = _data_license[_license] -%}
+    {%- endif -%}
+    <div class="article__license">{%- include article/footer/license.html license=_license_data -%}</div>
+  {%- endif -%}
+```
+
+### Modify the articles.html file
+```
+// Add
+articles:
+  data_source: site.sample_page
+  show_excerpt: true
+  show_readmore: true
+  show_info: true
+```
+
+## Setting the home.html file
+### This file is located in `_layouts/`
+This file is part of the page configuration
+
+###  Modify the home.html file
+I will make changes to line 31
+
+```
+// Before
+show_cover: false
+// After
+show_cover: true
+```
+
+## Setting the _text.scss file
+### This file is located in `_sass/common/classes/`
+This CSS file contains configuration regarding text color settings
+
+### Modify the _text.scss file
+I will make changes to line 27
+
+```
+a:not(.button) {
+    // Before
+    @include link-colors($text-color-theme-dark, $main-color-1);
+    // After
+    @include link-colors($text-color-theme-dark, #fff);
+  }
+}
+```
+
+## Setting the _article-content.scss file
+### This file is located in `_sass/components/`
+This CSS file contains configuration regarding article content settings
+
+### Modify the _article-content.scss file
+I will add this function in the final line
+
+```
+ img:not(.emoji) {
+    display: block; /* Ensures images are centered properly */
+    margin: 0 auto; /* Centers images horizontally */
+  }
+```
+
+## Setting the _author-links.scss file
+### This file is located in `_sass/components/`
+This CSS file contains configuration regarding author link color settings where you can change the text color and icon color in this file
+
+### Some functions will have their values changed
+[IMAGE-AUTHOR-LINKS]
+
+
+## Setting the _footer.scss file
+### This file is located in `_sass/components/`
+This CSS file contains footer settings
+
+## Modify the _footer.scss file
+I will make changes to line 10
+
+```
+a {
+    // Before
+    @include link-colors ($footer-text-color, $main-color-1);
+    // After
+    @include link-colors ($footer-text-color, $main-color-3);
+  }
+```
+
+## Setting the _header.scss file
+### This file is located in `_sass/components/`
+This CSS file contains header settings
+
+### Modify the _header.scss file
+I will make changes to line 16
+
+```
+.header--dark {
+  @extend .text--dark;
+  // Before
+  background: rgba(#000, .15);
+  // After
+  background: rgba(#fff, .15);
+  .navigation__item--active {
+    &::after {
+      // Before
+      @include split-line(bottom, 4px, $text-color-theme-dark);
+      // After
+      @include split-line(bottom, 5px, $text-color-theme-dark);
+    }
+  }
+}
+```
+
+## Setting the _tags.scss file
+### This file is located in `_sass/components/`
+This CSS file contains page tags settings
+
+### Modify the _tags.scss file
+```
+.site-tags {
+  .tag-button {
+    // Before
+    @include clickable($text-color-3, $main-color-3, default, default, $text-color-2,$main-color-2, $text-color-2,$main-color-2);
+    // After
+    @include clickable(#fff, $main-color-3, default, default, $text-color-2,$main-color-1, $text-color-2,$main-color-2);
+    & > .tag-button__count {
+      display: inline-block;
+      margin-left: map-get($spacers, 1);
+@@ -10,15 +10,15 @@
+    }
+  }
+  .tag-button-1 {
+    // Before
+    @include clickable($text-color-1, rgba($main-color-1, .4), default, default, $text-color-2,$main-color-2, $text-color-2,$main-color-2);
+    // After
+    @include clickable(#fff, rgba($main-color-1, .4), default, default, $text-color-2,$main-color-2, $text-color-2,$main-color-2);
+  }
+  .tag-button-2 {
+    // Before
+    @include clickable($text-color-1, rgba($main-color-1, .55), default, default, $text-color-2,$main-color-2, $text-color-2,$main-color-2);
+    // After
+    @include clickable(#fff, rgba($main-color-1, .55), default, default, $text-color-2,$main-color-2, $text-color-2,$main-color-2);
+  }
+  .tag-button-3 {
+    // Before
+    @include clickable($text-color-1, rgba($main-color-1, .7), default, default, $text-color-2,$main-color-2, $text-color-2,$main-color-2);
+    // After
+    @include clickable(#fff, rgba($main-color-1, .7), default, default, $text-color-2,$main-color-2, $text-color-2,$main-color-2);
+  }
+  .tag-button-4 {
+    // Before
+    @include clickable($text-color-1, rgba($main-color-1, .9), default, default, $text-color-2,$main-color-2, $text-color-2,$main-color-2);
+    // After
+    @include clickable(#fff, rgba($main-color-1, .9), default, default, $text-color-2,$main-color-2, $text-color-2,$main-color-2);
+  }
+}
+```
+
+## Setup Your Logo
+This time we will upload a logo and add a favicon
+
+> A favicon, short for “favorite icon,” is a small icon associated with a particular website or web page. It is a file containing one or more small icons that are used to represent the website or web page in various contexts
+
+### Add Logo
+In the `_includes/svg/` folder delete the default `logo.svg` and add your logo
+
+### Setting the favicon.html file
+This file is located in `_includes/head/`
+
+### Modify the favicon.html file
+```
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+<link rel="manifest" href="assets/site.webmanifest">
+<link rel="mask-icon" href="assets/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+```
+
+### Add necessary images
+Some of the following images are required
+* android-chrome-192x192.png
+* mstile-150x150.png
+* apple-touch-icon.png
+* favicon-32x32.png
+* favicon-16x16.png
 
 
 
 
 
-
-
-
-**This article is part of [HERE](https://kitian616.github.io/jekyll-TeXt-theme/docs/en/quick-start)**
 
 <h1 style="text-align: center;">
   Comming soon...
