@@ -143,7 +143,7 @@ Username or id of site author’s social networks.
 
 TeXt supports Email, Facebook, Twitter, Weibo, Google Plus, Telegram, Medium, Zhihu, Douban, Linkedin, Github and Npm, more to be added.
 
-Depending on your settings, the social network buttons would show on every pages’ footer.
+Depending on your settings, the social network buttons would show on every pages footer.
 
 ## GitHub repository
 Setting for [GitHub Metadata](https://github.com/jekyll/github-metadata) plugin, you can refer to [HERE](https://github.com/jekyll/github-metadata/blob/master/docs/configuration.md#configuration) for more info.
