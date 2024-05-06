@@ -463,14 +463,16 @@ git push -u origin dev
 ### Create pull request
 ![image-6](https://raw.githubusercontent.com/thd3r/thd3r.github.io/dev/assets/images/writeup/2022-12-04-How-to-configure-jekyll-TeXt-theme/content/images/image6.png)
 
-### Click merge pull request
+### Merge pull request
 ![image-7](https://raw.githubusercontent.com/thd3r/thd3r.github.io/dev/assets/images/writeup/2022-12-04-How-to-configure-jekyll-TeXt-theme/content/images/image7.png)
 
 
-> Credit [@kitian616](https://github.com/kitian616), Thank you for making it better.
+## Credit
+
+Credit [@kitian616](https://github.com/kitian616), Thank you for making it better.
 
 ## Conclusion
 
 In this article we learn how to configure several files, upload a logo, add a favicon and also deploy it to a github page
 
-If there is a word or sentence error in this article, please let me know [HERE](https://twitter.com/thd3r_)
+If there is a word or sentence error in this article, Please let me know [HERE](https://twitter.com/thd3r_)
