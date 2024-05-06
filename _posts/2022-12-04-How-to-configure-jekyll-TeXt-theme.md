@@ -17,7 +17,6 @@ Jekyll themes allow you to contain all the templating and presentational code wi
 By nature, Any well structured site that has easily editable content is ‘themeable’ — a layer, or skin, That presents content in the way the owner or creator intended; Jekyll is no different. Pages, posts and any other form of formatted content can be segregated from the templating files.
 
 ```
-
 ├── 404.html
 ├── Gemfile
 ├── _config.yml
@@ -28,7 +27,6 @@ By nature, Any well structured site that has easily editable content is ‘theme
 ├── about.md
 ├── archive.html
 └── index.html
-
 ```
 
 <em style="text-align: center;">
@@ -115,12 +113,14 @@ The base URL for your site, default to ‘/’. If you are hosting the site on G
 
 ### Title
 The name of your site.
+
 ```
 title: "My Awesome Website"
 ```
 
 ### Description
 Use some words to describe your site.
+
 ```
 description: > # this means to ignore newlines until "nav_lists:"
   A website with awesome stories.
@@ -129,6 +129,7 @@ description: > # this means to ignore newlines until "nav_lists:"
 ## Language and Timezone
 ### Language
 The language of your site, you can override it with different ones on specific posts, pages by YAML Front Matter4, learn more at Internationalization.
+
 ```
 lang: en
 ```
@@ -137,6 +138,7 @@ lang: en
 Set the time zone for site generation. This sets the TZ environment variable, which Ruby uses to handle time and date creation and manipulation. A list of all available values can be found [HERE](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones).
 
 When serving on a local machine, the default time zone is set by your operating system. But when served on a remote host/server, the default time zone depends on the server’s setting or location.
+
 ```
 timezone: Asia/City
 ```
@@ -175,25 +177,33 @@ repository: user_name/repo_name
 ```
 
 ## Setting the _button.scss file
+
 ### This file is located in **_sass/common/components/**
+
 ![IMAGE-1](https://raw.githubusercontent.com/thd3r/thd3r.github.io/dev/assets/images/writeup/2022-12-04-How-to-configure-jekyll-TeXt-theme/content/images/button/image1.png)
 
 ### Some functions will have their values changed
+
 ![IMAGE-2](https://raw.githubusercontent.com/thd3r/thd3r.github.io/dev/assets/images/writeup/2022-12-04-How-to-configure-jekyll-TeXt-theme/content/images/button/image2.png)
 
 ![IMAGE-3](https://raw.githubusercontent.com/thd3r/thd3r.github.io/dev/assets/images/writeup/2022-12-04-How-to-configure-jekyll-TeXt-theme/content/images/button/image3.png)
 
 ## Setting the _dark.scss file
+
 ### This file is located in **_sass/skins/**
+
 **Why dark.scss?** because in the _config.yml configuration file in the **text_skin:** section I chose **dark**
 
 ### The image below will explain some of the functions in the _dark.scss file
+
 ![IMAGE-1](https://raw.githubusercontent.com/thd3r/thd3r.github.io/dev/assets/images/writeup/2022-12-04-How-to-configure-jekyll-TeXt-theme/content/images/skins/image1.png)
 
 ### In the **$select-color** function section on line 50 change **$main-color-1** to **#fff**
+
 ![IMAGE-2](https://raw.githubusercontent.com/thd3r/thd3r.github.io/dev/assets/images/writeup/2022-12-04-How-to-configure-jekyll-TeXt-theme/content/images/skins/image2.png)
 
 ## Setting the _variables.scss file
+
 ### This file is located in `_sass/common/`
 In the **_variables.scss** file you can modify the font and add external fonts
 
@@ -205,6 +215,7 @@ I will modify the font and add the font via external path and I use the font **F
 To add external fonts you must add **some-font.ttf** in the root folder
 
 ## Setting the locale.yml and footer.html file
+
 ### This file is located in **_data/** and **_includes/**
 Both files configure copyright so here we will modify copyright through those two files
 
@@ -229,6 +240,7 @@ title="TeXt is a super customizable Jekyll theme." href="https://github.com/kiti
 ```
 
 ## Setting the variables.yml file
+
 ### This file is located in **_data/**
 This configuration file contains settings about the page
 
@@ -248,6 +260,7 @@ comment: false
 ```
 
 ## Setting the article-footer.html and articles.html file
+
 ### This file is located in **_includes/** and **_layouts/**
 These two files contain the configuration for the article
 
@@ -255,7 +268,6 @@ These two files contain the configuration for the article
 I will remove features that I think are not very useful for me but if you need them then leave it like that
 
 ```
-
 // Delete
 {%- if _show_subscribe -%}
     <div class="article__subscribe">{%- include article/footer/subscribe.html -%}</div>
@@ -271,23 +283,21 @@ I will remove features that I think are not very useful for me but if you need t
     {%- endif -%}
     <div class="article__license">{%- include article/footer/license.html license=_license_data -%}</div>
   {%- endif -%}
-
 ```
 
 ### Modify the articles.html file
 
 ```
-
 // Add
 articles:
   data_source: site.sample_page
   show_excerpt: true
   show_readmore: true
   show_info: true
-
 ```
 
 ## Setting the home.html file
+
 ### This file is located in **_layouts/**
 This file is part of the page configuration
 
@@ -295,15 +305,14 @@ This file is part of the page configuration
 I will make changes to line 31
 
 ```
-
 // Before
 show_cover: false
 // After
 show_cover: true
-
 ```
 
 ## Setting the _text.scss file
+
 ### This file is located in **_sass/common/classes/**
 This CSS file contains configuration regarding text color settings
 
@@ -311,7 +320,6 @@ This CSS file contains configuration regarding text color settings
 I will make changes to line 27
 
 ```
-
 a:not(.button) {
     // Before
     @include link-colors($text-color-theme-dark, $main-color-1);
@@ -319,10 +327,10 @@ a:not(.button) {
     @include link-colors($text-color-theme-dark, #fff);
   }
 }
-
 ```
 
 ## Setting the _article-content.scss file
+
 ### This file is located in **_sass/components/**
 This CSS file contains configuration regarding article content settings
 
@@ -330,15 +338,14 @@ This CSS file contains configuration regarding article content settings
 I will add this function in the final line
 
 ```
-
  img:not(.emoji) {
     display: block; /* Ensures images are centered properly */
     margin: 0 auto; /* Centers images horizontally */
   }
-
 ```
 
 ## Setting the _author-links.scss file
+
 ### This file is located in **_sass/components/**
 This CSS file contains configuration regarding author link color settings where you can change the text color and icon color in this file
 
@@ -346,6 +353,7 @@ This CSS file contains configuration regarding author link color settings where 
 ![IMAGE-AUTHOR-LINKS](https://raw.githubusercontent.com/thd3r/thd3r.github.io/dev/assets/images/writeup/2022-12-04-How-to-configure-jekyll-TeXt-theme/content/images/author-links/image1.png)
 
 ## Setting the _footer.scss file
+
 ### This file is located in **_sass/components/**
 This CSS file contains footer settings
 
@@ -353,17 +361,16 @@ This CSS file contains footer settings
 I will make changes to line 10
 
 ```
-
 a {
     // Before
     @include link-colors ($footer-text-color, $main-color-1);
     // After
     @include link-colors ($footer-text-color, $main-color-3);
   }
-
 ```
 
 ## Setting the _header.scss file
+
 ### This file is located in **_sass/components/**
 This CSS file contains header settings
 
@@ -371,7 +378,6 @@ This CSS file contains header settings
 I will make changes to line 16
 
 ```
-
 .header--dark {
   @extend .text--dark;
   // Before
@@ -387,17 +393,16 @@ I will make changes to line 16
     }
   }
 }
-
 ```
 
 ## Setting the _tags.scss file
+
 ### This file is located in **_sass/components/**
 This CSS file contains page tags settings
 
 ### Modify the _tags.scss file
 
 ```
-
 .site-tags {
   .tag-button {
     // Before
@@ -435,7 +440,6 @@ This CSS file contains page tags settings
     @include clickable(#fff, rgba($main-color-1, .9), default, default, $text-color-2,$main-color-2, $text-color-2,$main-color-2);
   }
 }
-
 ```
 
 ## Setup Your Logo
@@ -455,7 +459,6 @@ This file is located in **_includes/head/**
 ### Modify the favicon.html file
 
 ```
-
 <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
@@ -463,7 +466,6 @@ This file is located in **_includes/head/**
 <link rel="mask-icon" href="assets/safari-pinned-tab.svg" color="#5bbad5">
 <meta name="msapplication-TileColor" content="#da532c">
 <meta name="theme-color" content="#ffffff">
-
 ```
 
 ### Delete the following image
@@ -481,7 +483,6 @@ After we delete the image above, now we will add an image but in the format desc
 Create a site.webmanifest file in the **assets/** path with the following contents
 
 ```
-
 {
     "name": "TeXt Theme",
     "short_name": "TeXt Theme",
@@ -496,14 +497,12 @@ Create a site.webmanifest file in the **assets/** path with the following conten
     "background_color": "#ffffff",
     "display": "standalone"
 }
-
 ```
 
 ### Create the browserconfig.xml file
 Create a browserconfig.xml file in the **assets/** path with the following contents
 
 ```
-
 <?xml version="1.0" encoding="utf-8"?>
 <browserconfig>
     <msapplication>
@@ -513,7 +512,6 @@ Create a browserconfig.xml file in the **assets/** path with the following conte
         </tile>
     </msapplication>
 </browserconfig>
-
 ```
 
 > Credit [@kitian616](https://github.com/kitian616), Thank you for making it better.
