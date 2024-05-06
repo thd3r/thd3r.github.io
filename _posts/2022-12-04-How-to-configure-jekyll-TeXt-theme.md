@@ -11,8 +11,6 @@ tags:
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
-> This jekyll theme was created by [@kitian616](https://github.com/kitian616), Thank you for making it better.
-
 ## How do themes work?
 Jekyll themes allow you to contain all the templating and presentational code within a Ruby gem, much in the same way Jekyll plugins are contained. This means the design can be easily applied to a site, used on multiple sites, and the site codebase isn’t cluttered by the presentational layer.
 By nature, Any well structured site that has easily editable content is ‘themeable’ — a layer, or skin, That presents content in the way the owner or creator intended; Jekyll is no different. Pages, posts and any other form of formatted content can be segregated from the templating files.
@@ -131,7 +129,7 @@ Set the time zone for site generation. This sets the TZ environment variable, wh
 
 When serving on a local machine, the default time zone is set by your operating system. But when served on a remote host/server, the default time zone depends on the server’s setting or location.
 ```
-timezone: Asia/Jakarta
+timezone: Asia/City
 ```
 
 ## Author and Social
@@ -429,20 +427,59 @@ This file is located in `_includes/head/`
 <meta name="theme-color" content="#ffffff">
 ```
 
-### Add necessary images
-Some of the following images are required
+### Delete the following image
+The following image is in the `assets/` path
 * android-chrome-192x192.png
 * mstile-150x150.png
 * apple-touch-icon.png
 * favicon-32x32.png
 * favicon-16x16.png
 
+### Add necessary images
+After we delete the image above, now we will add an image but in the format described in the image above, simply change the image files but leave the name unchanged.
 
+### Create the site.webmanifest file
+Create a site.webmanifest file in the `assets/` path with the following contents
 
+```
+{
+    "name": "TeXt Theme",
+    "short_name": "TeXt Theme",
+    "icons": [
+        {
+            "src": "android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#ffffff",
+    "background_color": "#ffffff",
+    "display": "standalone"
+}
+```
 
+### Create the browserconfig.xml file
+Create a browserconfig.xml file in the `assets/` path with the following contents
 
+```
+<?xml version="1.0" encoding="utf-8"?>
+<browserconfig>
+    <msapplication>
+        <tile>
+            <square150x150logo src="mstile-150x150.png"/>
+            <TileColor>#b91d47</TileColor>
+        </tile>
+    </msapplication>
+</browserconfig>
+```
 
-<h1 style="text-align: center;">
-  Comming soon...
-</h1>
+### Add favicon.ico file
+We can add `favicon.ico` file in root path and `assets/` path
 
+> Credit [@kitian616](https://github.com/kitian616), Thank you for making it better.
+
+## Conclusion
+
+In this article we will learn how to configure several files in the form of yml, css, html formats where we will change, add and delete and also we will learn how to upload a logo and add a favicon
+
+If there is a word or sentence error in this article, please let me know [HERE](https://twitter.com/thd3r_)
