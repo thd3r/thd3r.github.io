@@ -3,6 +3,7 @@ title: "How to configure jekyll-TeXt theme and deploy it on github pages"
 tags:
 - jekyll
 - jekyll theme
+- jekyll-TeXt-theme
 ---
 
 <h3 style="text-align: center;">
