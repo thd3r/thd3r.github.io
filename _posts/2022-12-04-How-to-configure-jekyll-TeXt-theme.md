@@ -116,11 +116,11 @@ lang: en
 ```
 
 ### Timezone
-Set the time zone for site generation. This sets the TZ environment variable, which Ruby uses to handle time and date creation and manipulation. A list of all available values can be found HERE.
+Set the time zone for site generation. This sets the TZ environment variable, which Ruby uses to handle time and date creation and manipulation. A list of all available values can be found [HERE](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones).
 
-When serving on a local machine, the default time zone is set by your operating system. But when served on a remote host/server, the default time zone depends on the server’s setting or location.5
+When serving on a local machine, the default time zone is set by your operating system. But when served on a remote host/server, the default time zone depends on the server’s setting or location.
 ```
-timezone: Asia/Shanghai
+timezone: Asia/Jakarta
 ```
 
 ## Author and Social
