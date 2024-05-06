@@ -61,6 +61,9 @@ gem "jekyll-text-theme"
 theme: jekyll-text-theme
 ```
 
+## Local Preview
+Run `bundle exec jekyll serve` to start the development server, Then you can visit http://localhost:4000/ to preview your site.
+
 <h1 style="text-align: center;">
   Customization
 </h1>
