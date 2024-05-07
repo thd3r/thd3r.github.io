@@ -14,14 +14,14 @@ tags:
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
-## Overview
+# Overview
 
 Insecure direct object reference (IDOR) is a type of access control vulnerability that arises when applications use user-supplied input to access objects directly. IDOR vulnerabilities are most often associated with horizontal privilege escalation, But can also arise in connection with vertical privilege escalation.
 
 ## How to find bugs?
 I explored the API requests manually using the Burp Suite proxy, During the search I found the **/get-user** endpoint the endpoint was calling a **POST** request with a **data** parameter in the request body. The data parameter contains the user id value. On this request the hacker can obtain the information of any registered user.
 
-## Account takeover
+# Account takeover
 Using a **POST** request on the **/get-user** endpoint change the user id to another user id the response will contain important information about the user account including the password.
 
 ### Request
@@ -58,8 +58,10 @@ Content-Type: application/json; charset=utf-8
 }
 ```
 
-## Increase impact
+# Increase impact
 I wrote python code to increase its impact where this python script carries out a Brute Force attack to guess the user ID stored in the database. Using python's **requests** library I can make a **POST** request to the server and use a **for** loop to guess the user id and if the user id is valid it will display
+
+### Python code
 
 ```
 #!/usr/bin/env python3
@@ -139,10 +141,10 @@ $ python3 main.py
 }
 ```
 
-## Eventually
+# Eventually
 ![image](https://raw.githubusercontent.com/thd3r/thd3r.github.io/master/assets/images/writeup/2023-07-04-IDOR_1/Screenshot_2023-07-04_01-04-06.png)
 
-## Conclusion
+# Conclusion
 Check incoming traffic including some API requests sometimes you might miss them. Then try to report it by creating a script/exploit that helps them make it easier to reproduce our findings, Which can be a plus as well as practicing coding.
 
 That's it, thanks for reading.

@@ -12,13 +12,11 @@ tags:
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
-<h1 style="text-align: center;">
-  Overview
-</h1>
+# Overview
 
 ## How do themes work?
 Jekyll themes allow you to contain all the templating and presentational code within a Ruby gem, much in the same way Jekyll plugins are contained. This means the design can be easily applied to a site, used on multiple sites, and the site codebase isn’t cluttered by the presentational layer.
-By nature, Any well structured site that has easily editable content is ‘themeable’ — a layer, or skin, That presents content in the way the owner or creator intended; Jekyll is no different. Pages, posts and any other form of formatted content can be segregated from the templating files.
+By nature, Any well structured site that has easily editable content is ‘themeable’ a layer, or skin, That presents content in the way the owner or creator intended; Jekyll is no different. Pages, posts and any other form of formatted content can be segregated from the templating files.
 
 ```
 ├── 404.html
@@ -33,11 +31,11 @@ By nature, Any well structured site that has easily editable content is ‘theme
 └── index.html
 ```
 
-Example of a Jekyll site structure when using a theme gem
+<cite>
+  Example of a Jekyll site structure when using a theme gem
+</cite>
 
-<h1 style="text-align: center;">
-  Quick Start
-</h1>
+# Start
 
 ## Installing the Theme
 
@@ -74,9 +72,56 @@ theme: jekyll-text-theme
 ## Local Preview
 Run **bundle exec jekyll serve** to start the development server, Then you can visit http://localhost:4000/ to preview your site.
 
-<h1 style="text-align: center;">
-  Customization
-</h1>
+## Structure
+
+```
+├── _data
+│   ├── locale.yml
+│   ├── navigation.yml
+│   └── variables.yml
+├── _includes
+│   ├── analytics-providers
+│   ├── aside
+│   ├── comments-providers
+│   ├── markdown-enhancements
+│   ├── pageview-providers
+│   ├── scripts
+│   ├── sidebar
+│   ├── snippets
+│   ├── svg
+│   │   ├── icon
+│   │   │   ├── social
+│   │   │   │   ├── facebook.svg
+│   │   │   │   └── ...
+│   │   └── logo.svg
+│   └── ...
+├── _layouts
+│   ├── 404.html
+│   ├── archive.html
+│   ├── article.html
+│   ├── base.html
+│   ├── home.html
+│   ├── none.html
+│   └── page.html
+├── _sass
+├── assets
+│   ├── css
+│   │   └── blog.scss
+│   └── images
+├── tools
+├── 404.html
+├── Gemfile
+├── _config.yml
+├── about.md
+├── archive.html
+├── favicon.ico
+├── gulpfile.js
+├── index.html
+├── jekyll-text-theme.gemspec
+└── package.json
+```
+
+# Customization
 
 In this chapter we will learn how to configure several files in the form of yml, css, html formats where we will change, add and delete and also we will learn how to upload a logo and add a favicon. We will arrange everything necessary in this chapter
 
@@ -433,11 +478,9 @@ Create a browserconfig.xml file in the **assets/** path with the following conte
 </browserconfig>
 ```
 
-<h1 style="text-align: center;">
-  Deploy it on github pages
-</h1>
+# Deploy it on github
 
-This time we will share what we have done previously to the github page. In this chapter we will also learn to use git commands.
+This time i will deploy what i have done previously to the github page. In this chapter we will also learn to use git commands.
 
 > Git is a very popular version control system used by software developers to manage changes in their source code. This enables development teams to work collaboratively on software projects safely and efficiently.
 
@@ -467,11 +510,11 @@ git push -u origin dev
 ![image-7](https://raw.githubusercontent.com/thd3r/thd3r.github.io/dev/assets/images/writeup/2022-12-04-How-to-configure-jekyll-TeXt-theme/content/images/image7.png)
 
 
-## Credit
+# Credit
 
 Credit [@kitian616](https://github.com/kitian616), Thank you for making it better.
 
-## Conclusion
+# Conclusion
 
 In this article we learn how to configure several files, upload a logo, add a favicon and also deploy it to a github page
 
