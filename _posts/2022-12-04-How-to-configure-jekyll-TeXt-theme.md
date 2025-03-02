@@ -6,13 +6,8 @@ tags:
 - jekyll-TeXt-theme
 ---
 
-<h3 style="text-align: center;">
-  In this article, you will learn how to install the theme, setup your site, local preview for development, build and publish.
-</h3>
-
-<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
-
 # Overview
+In this article, you will learn how to install the theme, setup your site, local preview for development, build and publish.
 
 ## How do themes work?
 Jekyll themes allow you to contain all the templating and presentational code within a Ruby gem, much in the same way Jekyll plugins are contained. This means the design can be easily applied to a site, used on multiple sites, and the site codebase isn’t cluttered by the presentational layer.
