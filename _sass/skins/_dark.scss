@@ -5,41 +5,41 @@
 ///
 
 // main colors
-$main-color-1:     #63b1ff; 
-$text-color-1:     rgba(#fff, .8); 
+$main-color-1:     #fc6363;
+$text-color-1:     rgba(#00f3ff, .9);
 
-$main-color-2:     #0099ff;
-$text-color-2:     rgba(#fff, .8);
+$main-color-2:     #f73939;
+$text-color-2:     rgba(#fff, .9);
 
-$main-color-3:     #181818;
-$text-color-3:     rgba(#fff, .8);
+$main-color-3:     #00152c;
+$text-color-3:     rgba(#fff, .9);
 
 $main-color-theme-light: rgba(#000, .8);
 $main-color-theme-dark:  rgba(#fff, .8);
 
 // page background
-$background-color: #181818;
+$background-color: #001325;
 
 // text colors
 $text-color-theme-light-d: #000;
 $text-color-theme-light:   #222;
 $text-color-theme-light-l: #888;
 
-$text-color-theme-dark-d:  rgba(#fff, .8);
-$text-color-theme-dark:    rgba(#fff, .7);
-$text-color-theme-dark-l:  rgba(#fff, .5);
+$text-color-theme-dark-d:  rgba(#c78dff, .9);
+$text-color-theme-dark:    rgba(#ffffff, .8);
+$text-color-theme-dark-l:  rgba(#ffffff, .6);
 
 $text-color-d:     $text-color-theme-dark-d;
 $text-color:       $text-color-theme-dark;
 $text-color-l:     $text-color-theme-dark-l;
 
-$text-background-color: rgba(#fff, .05);
+$text-background-color: rgba(#ffffff, .05);
 
 // header and footer colors
-$header-text-color: $text-color-3;
+$header-text-color: #ffffff;
 $header-background: $main-color-3;
 
-$footer-text-color: $text-color-3;
+$footer-text-color: #ffffff;
 $footer-background: $main-color-3;
 
 // border and shadow colors

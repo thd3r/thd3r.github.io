@@ -1,5 +1,5 @@
 $base: (
-  font-family:            ("Fira Code", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif),
+  font-family:            (Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif),
   font-family-code:       (Menlo, Monaco, Consolas, Andale Mono, lucida console, Courier New, monospace),
 
   font-size-root:         15px,
@@ -153,6 +153,10 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Fira Code', sans-serif;
 }
 
+.highlighter-rouge {
+    font-family: 'Fira Code', sans-serif;
+}
+
 .highlight code {
   font-family: 'Fira Code', monospace;
 }
@@ -160,4 +164,9 @@ h1, h2, h3, h4, h5, h6 {
 @font-face {
   font-family: 'Fira Code';
   src: url('/FiraCode-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: Inter;
+  src: url('/Inter-Regular.ttf') format('truetype');
 }
