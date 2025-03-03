@@ -31,4 +31,5 @@ A guy who is full of curiosity sometimes breaks the rules just to satisfy his cu
 
 Be kind guys ;)
 
+<br>
 [![spotify-github-profile](https://spotify-github-profile.kittinanx.com/api/view?uid=jp55czt2a9gy4tnhufh9qdza4&cover_image=true&theme=natemoo-re&show_offline=false&background_color=000000&interchange=false&bar_color=00f3ff&bar_color_cover=false)](https://spotify-github-profile.kittinanx.com/api/view?uid=jp55czt2a9gy4tnhufh9qdza4&redirect=true)
