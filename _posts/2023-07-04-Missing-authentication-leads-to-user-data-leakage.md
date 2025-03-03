@@ -58,7 +58,7 @@ x-frame-options: SAMEORIGIN
 ```
 
 # Leaking all user data
-By using any registered user id can leak registered user data this is a kind of vulnerability Insecure direct object reference (IDOR) - is a type of access control vulnerability that arises when applications use user-supplied input to access objects directly. I knew that the user ids used were not random but sequential so I wrote python code to leak every registered user's data on the site.
+By using any registered user id can leak registered user data this is a kind of vulnerability Insecure direct object reference (IDOR) - <cite>is a type of access control vulnerability that arises when applications use user-supplied input to access objects directly.</cite> I knew that the user ids used were not random but sequential so I wrote python code to leak every registered user's data on the site.
 
 ### Python code
 
@@ -93,6 +93,6 @@ if len(r.text) > 350:
 ![image](https://raw.githubusercontent.com/thd3r/thd3r.github.io/master/assets/images/writeup/2023-07-04-IDOR_1/Screenshot_2023-07-04_01-04-06.png)
 
 # Conclusion
-Check incoming traffic including some API requests sometimes you might miss them. Then try to report it by creating a script/exploit that helps them make it easier to reproduce our findings, Which can be a plus as well as practicing coding.
+Check the incoming traffic including some API requests that you may have missed. Then try to create a good report so that the security team can reproduce the findings as well as create an exploit script that helps to show and exacerbate the impact. This can also be a plus while practicing coding.
 
-That's it, thanks for reading.
+That's it, Thanks for reading - <a href="https://x.com/thd3r">@thd3r</a>

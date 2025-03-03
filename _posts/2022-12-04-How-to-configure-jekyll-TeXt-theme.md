@@ -7,7 +7,6 @@ tags:
 ---
 
 # Overview
-In this article, you will learn how to install the theme, setup your site, local preview for development, build and publish.
 
 ## How do themes work?
 Jekyll themes allow you to contain all the templating and presentational code within a Ruby gem, much in the same way Jekyll plugins are contained. This means the design can be easily applied to a site, used on multiple sites, and the site codebase isn’t cluttered by the presentational layer.
@@ -26,11 +25,9 @@ By nature, Any well structured site that has easily editable content is ‘theme
 └── index.html
 ```
 
-<cite>
-  Example of a Jekyll site structure when using a theme gem
-</cite>
+> Example of a Jekyll site structure when using a theme gem
 
-# Start
+# Quick Start
 
 ## Installing the Theme
 
@@ -42,14 +39,8 @@ To install it with common method, All you need to do is copying all the theme fi
 * If you host your site on GitHub Pages, you can just fork [jekyll-TeXt-theme](https://github.com/kitian616/jekyll-TeXt-theme), then rename the repository to USERNAME.github.io — replacing USERNAME with your GitHub username.
 
 ![Image by @kitian616](https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/docs/assets/images/github-fork.jpg)
-<cite style="text-align: center">
-  source: <a href="https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/docs/assets/images/github-fork.jpg">github-fork.jpg</a>
-</cite>
 
 ![Image by @kitian616](https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/docs/assets/images/github-rename-repo.jpg)
-<cite style="text-align: center">
-  source: <a href="https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/docs/assets/images/github-rename-repo.jpg">github-rename-repo.jpg</a>
-</cite>
 
 ### Ruby Gem Method
 * Add this line to your Jekyll site’s **Gemfile**:
@@ -504,13 +495,8 @@ git push -u origin dev
 ### Merge pull request
 ![image-7](https://raw.githubusercontent.com/thd3r/thd3r.github.io/dev/assets/images/writeup/2022-12-04-How-to-configure-jekyll-TeXt-theme/content/images/image7.png)
 
-
-# Credit
-
-Credit [@kitian616](https://github.com/kitian616), Thank you for making it better.
-
 # Conclusion
 
 In this article we learn how to configure several files, upload a logo, add a favicon and also deploy it to a github page
 
-If there is a word or sentence error in this article, Please let me know [HERE](https://twitter.com/thd3r_)
+If there is a word or sentence error in this article, Please let me know [HERE](https://twitter.com/thd3r)
