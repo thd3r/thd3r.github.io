@@ -11,7 +11,7 @@ tags:
 Missing authentication leads to user data leakage, That's the sentence that describes the problem in this article. Authentication is basically the most important part of security when building an application because it keeps unauthenticated people from accessing anything sensitive or trying to become a privileged user.
 
 ## How do I catch a bug?
-I performed basic reconnaissance techniques on the target and performed activities like a normal user. The site didn't have many features and forms, I tested a few things messing with business logic, breaking authentication and session validation all seemed safe until when I checked every request in the proxy history using Burp Suite which made it easy to reproduce the issue. I found a **POST** api request to the path **/api/landing-page/get-user** 
+I performed basic reconnaissance techniques on the target and performed activities like a normal user. The site didn't have many features and forms, I tested a few things messing with business logic, breaking authentication and session validation all seemed safe until when I checked every request in the proxy history using [BurpSuite](https://portswigger.net/burp) which made it easy to reproduce the issue. I found a **POST** api request to the path **/api/landing-page/get-user** 
 
 # Proof of Concept
 
@@ -58,7 +58,7 @@ x-frame-options: SAMEORIGIN
 ```
 
 # Leaking all user data
-By using any registered user id can leak registered user data this is a kind of vulnerability Insecure direct object reference (IDOR) - <cite>is a type of access control vulnerability that arises when applications use user-supplied input to access objects directly.</cite> I knew that the user ids used were not random but sequential so I wrote python code to leak every registered user's data on the site.
+By using any registered user id can leak registered user data this is a kind of vulnerability [Insecure direct object reference (IDOR)](https://portswigger.net/web-security/access-control/idor) - <cite>is a type of access control vulnerability that arises when applications use user-supplied input to access objects directly.</cite> I knew that the user ids used were not random but sequential so I wrote python code to leak every registered user's data on the site.
 
 ### Python code
 
@@ -74,7 +74,13 @@ for i in range(10):
         pass
 ```
 
-Uses the **requests** library to make a request to the specified URL along with the data in the body
+Performs a loop to generate a number that will be used to guess the id of each user.
+
+```
+for i in range(10):
+```
+
+Uses the [requests](https://pypi.org/project/requests/) library to make a request to the specified URL along with the data in the body.
 
 ```
 r = requests.post("https://redacted.com/api/landing-page/get-user", data='guid=&code=0&data={"user_id":"{}".format(i)} ', headers={'User-Agent': f'Mozilla/5.0 (X11; Linux x86_64; rv:108.0) Gecko/20100101 Firefox/{i}', 'Content-Type': 'application/x-www-form -urlencoded'})
