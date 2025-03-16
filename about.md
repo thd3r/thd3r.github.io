@@ -27,9 +27,6 @@ key: page-about
 ---
 <!-- Header -->
 
-A guy who is full of curiosity sometimes breaks the rules just to satisfy his curiosity. A guy with high dreams wishes he had wings to achieve his dreams quickly but the reality is that no success can be achieved without discipline, consistency, and patience.
+A man full of curiosity sometimes breaks the rules just to satisfy his curiosity and a man with high dreams wishes he had wings to reach his dreams quickly and remember that anyone can become anything.
 
 Be kind guys ;)
-
-<br>
-[![spotify-github-profile](https://spotify-github-profile.kittinanx.com/api/view?uid=jp55czt2a9gy4tnhufh9qdza4&cover_image=true&theme=natemoo-re&show_offline=false&background_color=000000&interchange=false&bar_color=00f3ff&bar_color_cover=false)](https://spotify-github-profile.kittinanx.com/api/view?uid=jp55czt2a9gy4tnhufh9qdza4&redirect=true)

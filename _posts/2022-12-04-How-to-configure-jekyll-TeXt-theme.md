@@ -3,7 +3,6 @@ title: "How to configure jekyll-TeXt theme and deploy it on github pages"
 tags:
 - jekyll
 - jekyll theme
-- jekyll-TeXt-theme
 ---
 
 # Overview
