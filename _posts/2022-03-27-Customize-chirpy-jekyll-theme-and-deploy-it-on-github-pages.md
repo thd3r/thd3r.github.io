@@ -99,9 +99,9 @@ This requires some GEM's to be installed before it can be used. On your local de
 bundle
 ```
 
-## Verify the site locally and view the changes in browser
+## Verify the site locally
 
-Run this command to see the changes that have been made
+Run this command to review locally
 
 ```sh
 bundle exec jekyll serve -H 0.0.0.0 -t
