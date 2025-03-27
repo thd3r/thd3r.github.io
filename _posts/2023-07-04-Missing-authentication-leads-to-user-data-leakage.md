@@ -99,6 +99,7 @@ if len(r.text) > 350:
 
 ## $$$
 ![image](/assets/img/writeup/2023-07-04/Screenshot_2023-07-04_01-04-06.png)
+_Rewarded by the program_
 
 ## Conclusion
 Check the incoming traffic including some API requests that you may have missed. Then try to create a good report so that the security team can reproduce the findings as well as create an exploit script that helps to show and exacerbate the impact. This can also be a plus while practicing coding.
