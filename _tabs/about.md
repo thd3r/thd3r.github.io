@@ -4,5 +4,6 @@ icon: fas fa-info-circle
 order: 4
 ---
 
-> Add Markdown syntax content to file `_tabs/about.md`{: .filepath } and it will show up on this page.
-{: .prompt-tip }
+A man full of curiosity sometimes breaks the rules just to satisfy his curiosity and a man with high dreams wishes he had wings to reach his dreams quickly and remember that anyone can become anything.
+
+Be kind guys ;)
