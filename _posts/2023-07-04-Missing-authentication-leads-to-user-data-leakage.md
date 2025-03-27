@@ -1,11 +1,10 @@
 ---
 title: The story of how I was able to leak all user data
-author: Thunder
 date: 2023-07-04 09:15:00
 categories: [Bug Bounty]
 tags: [bugbounty, hacking, python, idor]
 image:
-  path: https://i.pinimg.com/originals/a5/d1/f6/a5d1f61e89bdce061817723044f8a757.gif
+  path: https://secure.static.tumblr.com/ef2e2596c4ea072a60453d23ceab337f/coctv14/Y6Ln55n03/tumblr_static_azgsowaz948okgow4c4o8go8c.gif
 ---
 
 ## Overview
