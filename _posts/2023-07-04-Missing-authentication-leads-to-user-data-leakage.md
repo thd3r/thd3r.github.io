@@ -1,6 +1,7 @@
 ---
 title: The story of how I was able to leak all user data
 date: 2023-07-04 09:15:00
+mermaid: true
 categories: [Bug Bounty]
 tags: [bugbounty, hacking, python, idor]
 image:
@@ -98,7 +99,7 @@ if len(r.text) > 350:
 ```
 
 ## $$$
-![image](/assets/img/writeup/2023-07-04/Screenshot_2023-07-04_01-04-06.png)
+![image](/assets/img/writeup/2023-07-04/Screenshot_2023-07-04_01-04-06.png){: .shadow }
 _Rewarded by the program_
 
 ## Conclusion
