@@ -48,7 +48,7 @@ source ~/.bashrc
 
 This approach simplifies upgrades, isolates unnecessary files, and is perfect for users who want to focus on writing with minimal configuration.
 
-1. Sign in to GitHub and navigate to the [**starter**][starter].
+1. Sign in to GitHub and navigate to the [**starter**](https://github.com/cotes2020/chirpy-starter).
 2. Click the <kbd>Use this template</kbd> button and then select <kbd>Create a new repository</kbd>.
 3. Name the new repository `<username>.github.io`, replacing `username` with your lowercase GitHub username.
 
