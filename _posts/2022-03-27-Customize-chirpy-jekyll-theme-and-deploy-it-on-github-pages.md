@@ -1,5 +1,5 @@
 ---
-title: Customize Chirpy Jekyll Theme & deploy it on Github Pages
+title: "Transform Your Website with the Chirpy Jekyll Theme: A Step-by-Step Guide to Customization and Deployment on GitHub Pages"
 date: 2022-03-27 14:29:00
 mermaid: true
 categories: [Theme, Chirpy Jekyll Theme]
@@ -8,7 +8,7 @@ image:
     path: https://camo.githubusercontent.com/7deb9e4905ab1e73cec83fa80f3a5d0c7f613e6b522a9fdc41d5c79fad37eda8/68747470733a2f2f6368697270792d696d672e6e65746c6966792e6170702f636f6d6d6f6e732f646576696365732d6d6f636b75702e706e67
 ---
 
-This theme customization is not much to configure and you can get this theme in this [repository](https://github.com/cotes2020/jekyll-theme-chirpy/tree/master). This theme project is developed by talented developers especially with knowledge of ruby ​​and also jekyll
+Jekyll is a powerful static site generator that, when combined with GitHub Pages, allows you to easily host and manage blogs and websites. If you want a clean, minimalist, and customizable theme, the Chirpy Jekyll theme is an excellent choice. This theme customization is not much to configure and you can get this theme in this [repository](https://github.com/cotes2020/jekyll-theme-chirpy/tree/master). This theme project is developed by talented developers especially with knowledge of Ruby ​​and also Jekyll. In this guide, we’ll walk you through the steps to customize the Chirpy theme and deploy it on GitHub Pages.
 
 So lets break down the different components:
 
@@ -22,41 +22,18 @@ So lets break down the different components:
 
 * [Github Pages](https://pages.github.com/) and an underlying Github repo will be use to store and host everything related to our site.
 
-# Setup Ruby, Gem and Jekyll
+# Step-by-Step Guide
 
-## Install Ruby and other prerequisites
+## Setting Up the Environment
 
-```terminal
-thd3r@425:~/github$ sudo apt-get install ruby-full build-essential zlib1g-dev
-[sudo] password for thd3r:
-Reading package lists... Done
-Building dependency tree... Done
-Reading state information... Done
-build-essential is already the newest version (12.9ubuntu3).
-zlib1g-dev is already the newest version (1:1.2.11.dfsg-2ubuntu9.2).
-The following additional packages will be installed:
-  ri
-The following NEW packages will be installed:
-  ri ruby-full
-0 upgraded, 2 newly installed, 0 to remove and 4 not upgraded.
-Need to get 6788 B of archives.
-After this operation, 38.9 kB of additional disk space will be used.
-Do you want to continue? [Y/n] Y
-Get:1 http://archive.ubuntu.com/ubuntu jammy/universe amd64 ri all 1:3.0~exp1 [4206 B]
-Get:2 http://archive.ubuntu.com/ubuntu jammy/universe amd64 ruby-full all 1:3.0~exp1 [2582 B]
-Fetched 6788 B in 1s (4970 B/s)
-Selecting previously unselected package ri.
-(Reading database ... 47201 files and directories currently installed.)
-Preparing to unpack .../ri_1%3a3.0~exp1_all.deb ...
-Unpacking ri (1:3.0~exp1) ...
-Selecting previously unselected package ruby-full.
-Preparing to unpack .../ruby-full_1%3a3.0~exp1_all.deb ...
-Unpacking ruby-full (1:3.0~exp1) ...
-Setting up ri (1:3.0~exp1) ...
-Setting up ruby-full (1:3.0~exp1) ...
+Before you start, ensure Ruby, Bundler, and Jekyll are installed. Use the following commands to install dependencies
+
+```sh
+sudo apt-get install ruby-full build-essential zlib1g-dev
+gem install jekyll bundler
 ```
 
-### Add environment variables to your ~/.bashrc file
+### Set up environment variables to manage Ruby gems efficiently
 
 ```sh
 echo '# Install Ruby Gems to ~/gems' >> ~/.bashrc
@@ -64,14 +41,6 @@ echo 'export GEM_HOME="$HOME/gems"' >> ~/.bashrc
 echo 'export PATH="$HOME/gems/bin:$PATH"' >> ~/.bashrc
 source ~/.bashrc
 ```
-
-## Install Jekyll and Bundler
-
-```sh
-gem install jekyll bundler
-```
-
-# Getting Started
 
 ## Select your option to get started
 
@@ -93,21 +62,23 @@ This approach is convenient for modifying features or UI design, but presents ch
 
 ## Installing dependencies of chirpy-starter 
 
-This requires some GEM's to be installed before it can be used. On your local development machine, clone the new repo and go to the repo root directory and run `bundle` command
+This requires some GEM's to be installed before it can be used. On your local development machine, Once you’ve set up the repository, run `bundle` in the root directory to install all necessary dependencies
 
 ```sh
 bundle
 ```
 
-## Verify the site locally
+## Running the Site Locally
 
-Run this command to review locally
+To verify the site looks good locally, use the following command:
 
 ```sh
 bundle exec jekyll serve -H 0.0.0.0 -t
 ```
 
 # Configure
+
+Now it’s time to make the site your own. Modify the `_config.yml` file to set the language, title, tagline, social links, and more. Don’t forget to replace the default favicon in the `assets/img/favicons/` directory with your own, using a tool like Real [Real Favicon Generator](https://realfavicongenerator.net/)
 
 ## Configuration file table data
 
@@ -157,6 +128,8 @@ _Create your Favicons using Real Favicon Generator_
 
 ## Configure to Deploy the Website
 
+To deploy the website, enable GitHub Pages in the repository settings. GitHub Actions will automatically build your site and host it for free.
+
 ### Enable Github Pages
 
 The Github Action so Jekyll can automatically generate the static site content that Github Pages will then present our visitors.
@@ -197,4 +170,4 @@ git push -u origin main
 
 ## Conclusion
 
-So far we have done a lot starting from setting up the theme requirements, configuring some important files, customizing the favicon and deploying the site. We also learned how to use git commands, learned a little about Ruby, Bundle and Jekyll.
+By following these simple steps, you can easily set up, customize, and deploy a stylish Jekyll site with the Chirpy theme. Whether you’re building a blog or a personal website, Chirpy offers a clean and efficient way to get online.

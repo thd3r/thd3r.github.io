@@ -1,5 +1,5 @@
 ---
-title: The story of how I was able to leak all user data
+title: "How Poor Authentication Led to Massive User Data Leakage: A Security Flaw Exposed"
 date: 2023-07-04 09:15:00
 mermaid: true
 categories: [Bug Bounty]
@@ -8,12 +8,15 @@ image:
   path: https://secure.static.tumblr.com/ef2e2596c4ea072a60453d23ceab337f/coctv14/Y6Ln55n03/tumblr_static_azgsowaz948okgow4c4o8go8c.gif
 ---
 
-## Overview
+Missing authentication leads to user data leakage, data security is one of the most important concerns for digital platforms. However, vulnerabilities that can be exploited by malicious actors are still commonly found. One such vulnerability is the lack of proper authentication on APIs, which can lead to user data leakage. Authentication is basically the most important part of security when building an application because it keeps unauthenticated people from accessing anything sensitive or trying to become a privileged user.
 
-Missing authentication leads to user data leakage, That's the sentence that describes the problem in this article. Authentication is basically the most important part of security when building an application because it keeps unauthenticated people from accessing anything sensitive or trying to become a privileged user.
+## The User Data Leakage Case
 
-## How do I catch a bug?
-I performed basic reconnaissance techniques on the target and performed activities like a normal user. The site didn't have many features and forms, I tested a few things messing with business logic, breaking authentication and session validation all seemed safe until when I checked every request in the proxy history using [BurpSuite](https://portswigger.net/burp) which made it easy to reproduce the issue. I found a **POST** api request to the path **/api/landing-page/get-user** 
+This article recounts the experience of a security researcher who managed to access and leak user data from an application simply by exploiting a weakness in the authentication system. The researcher conducted basic testing on the app by observing system behavior and detecting a vulnerability that allowed access without sufficient authentication.
+
+## Step One: Initial Research
+
+My first step was to explore the target application. In this test, I used the [BurpSuite](https://portswigger.net/burp) tool to comb through the application and identify potential gaps, such as APIs that do not require authentication to access user data. This creates an opportunity for an attacker to exploit personal information, such as a user's email and password, by simply changing the user ID in the URL. The site didn't have many features and forms, I tested a few things messing with business logic, breaking authentication and session validation all seemed safe until when I checked every request in the proxy history using [BurpSuite](https://portswigger.net/burp) which made it easy to reproduce the issue. I found a `POST` api request to the path `/api/landing-page/get-user`
 
 ## Proof of Concept
 
@@ -60,8 +63,15 @@ x-frame-options: SAMEORIGIN
 }
 ```
 
-## Leaking all user data
-By using any registered user id can leak registered user data this is a kind of vulnerability [Insecure direct object reference (IDOR)](https://portswigger.net/web-security/access-control/idor) - _is a type of access control vulnerability that arises when applications use user-supplied input to access objects directly._ I knew that the user ids used were not random but sequential so I wrote python code to leak every registered user's data on the site.
+## The Security Flaw: IDOR (Insecure Direct Object Reference)
+
+The flaw discovered in this case was an [Insecure Direct Object Reference (IDOR)](https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://portswigger.net/web-security/access-control/idor&ved=2ahUKEwijl6LX5auMAxXFXmwGHYenEmMQFnoECAkQAQ&usg=AOvVaw1iGLeSV-Hu4-CW8fpbEgFg) a vulnerability that allows attackers to access other users' data by manipulating the ID parameter in API requests. In this case, the attacker only needed to change a number in the URL used to access user data, such as changing `userID=1` to `userID=2` to access data for a different user.
+
+## Accessing and Leaking Data
+
+By using this simple technique, the researcher was able to access user data on a large scale. The leaked data included sensitive information such as users’ email addresses and passwords. The researcher also realized that the system did not impose restrictions or protections against unauthorized access. As a result, the potential for data leakage was significantly increased, especially if the attacker knew or guessed valid user IDs.
+
+I knew that the user ids used were not random but sequential so I wrote [python](https://www.python.org) code to leak every registered user's data on the site.
 
 ### Python code
 
@@ -98,11 +108,25 @@ if len(r.text) > 350:
         pass
 ```
 
+## The Impact of Data Leakage
+
+Data leakage like this can have severe consequences. Exposed personal information can be used for various cybercrimes, including identity theft, fraud, or even further attacks that cause greater damage. For companies, such data breaches can harm their reputation, lead to legal consequences, and result in a loss of user trust.
+
+## Preventing Data Leakage
+
+Preventing data leakage caused by IDOR and other authentication flaws can be achieved with several measures:
+
+* Implement Strong Authentication: Every API accessing sensitive data should be protected by strong and proper authentication. Using tokens or session-based authentication is an important first step.
+
+* Access Validation: Ensure that users can only access their own data. The system must verify that the user ID provided in the API request matches the user who is making the request.
+
+* Regular Security Testing: Conduct routine security tests, including penetration testing and code audits, to identify and patch vulnerabilities early.
+
+* Security Training for Developers: Developers need to be thoroughly educated about potential vulnerabilities and the importance of securing APIs and authentication.
+
 ## $$$
 ![image](/assets/img/writeup/2023-07-04/Screenshot_2023-07-04_01-04-06.png){: .shadow }
 _Rewarded by the program_
 
 ## Conclusion
-Check the incoming traffic including some API requests that you may have missed. Then try to create a good report so that the security team can reproduce the findings as well as create an exploit script that helps to show and exacerbate the impact. This can also be a plus while practicing coding.
-
-That's it, Thanks for reading - <a href="https://x.com/thd3r">@thd3r</a>
+Data leakage due to insufficient authentication can occur due to fundamental errors in system design. This case demonstrates the importance of always verifying access and protecting user data with the proper technology. By implementing the right preventive measures, the risk of data leakage can be minimized, and applications can operate more securely and earn the trust of users.
