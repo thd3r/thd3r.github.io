@@ -16,7 +16,9 @@ This article recounts the experience of a security researcher who managed to acc
 
 ## Step One: Initial Research
 
-My first step was to explore the target application. In this test, I used the [BurpSuite](https://portswigger.net/burp) tool to comb through the application and identify potential gaps, such as APIs that do not require authentication to access user data. This creates an opportunity for an attacker to exploit personal information, such as a user's email and password, by simply changing the user ID in the URL. The site didn't have many features and forms, I tested a few things messing with business logic, breaking authentication and session validation all seemed safe until when I checked every request in the proxy history using [BurpSuite](https://portswigger.net/burp) which made it easy to reproduce the issue. I found a `POST` api request to the path `/api/landing-page/get-user`
+My first step was to explore the target application. In this test, I used the [BurpSuite](https://portswigger.net/burp) tool to comb through the application and identify potential gaps, such as APIs that do not require authentication to access user data. This creates an opportunity for an attacker to exploit personal information, such as a user's email and password, by simply changing the user ID in the URL.
+
+The site didn't have many features and forms, I tested a few things messing with business logic, breaking authentication and session validation all seemed safe until when I checked every request in the proxy history using [BurpSuite](https://portswigger.net/burp) which made it easy to reproduce the issue. I found a `POST` api request to the path `/api/landing-page/get-user`
 
 ## Proof of Concept
 
