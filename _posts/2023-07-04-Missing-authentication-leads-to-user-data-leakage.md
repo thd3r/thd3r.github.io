@@ -71,7 +71,7 @@ The flaw discovered in this case was an [Insecure Direct Object Reference (IDOR)
 
 By using this simple technique, the researcher was able to access user data on a large scale. The leaked data included sensitive information such as users’ email addresses and passwords. The researcher also realized that the system did not impose restrictions or protections against unauthorized access. As a result, the potential for data leakage was significantly increased, especially if the attacker knew or guessed valid user IDs.
 
-I knew that the user ids used were not random but sequential so I wrote [python](https://www.python.org) code to leak every registered user's data on the site.
+I realized that the user IDs used were not random but sequential, so I wrote [python](https://www.python.org) code to leak the data of every registered user on the site.
 
 ### Python code
 
