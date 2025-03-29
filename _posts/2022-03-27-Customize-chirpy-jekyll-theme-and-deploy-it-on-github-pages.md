@@ -2,10 +2,11 @@
 title: "Transform Your Website with the Chirpy Jekyll Theme: A Step-by-Step Guide to Customization and Deployment on GitHub Pages"
 date: 2022-03-27 14:29:00
 mermaid: true
-categories: [Theme, Chirpy Jekyll Theme]
+categories: [Technology & Tutorials]
 tags: [theme, chirpy jekyll theme, jekyll, jekyll theme]
 image:
     path: https://camo.githubusercontent.com/7deb9e4905ab1e73cec83fa80f3a5d0c7f613e6b522a9fdc41d5c79fad37eda8/68747470733a2f2f6368697270792d696d672e6e65746c6966792e6170702f636f6d6d6f6e732f646576696365732d6d6f636b75702e706e67
+    alt: Responsive rendering of Chirpy theme on multiple devices.
 ---
 
 Jekyll is a powerful static site generator that, when combined with GitHub Pages, allows you to easily host and manage blogs and websites. If you want a clean, minimalist, and customizable theme, the Chirpy Jekyll theme is an excellent choice. This theme customization is not much to configure and you can get this theme in this [repository](https://github.com/cotes2020/jekyll-theme-chirpy/tree/master). This theme project is developed by talented developers especially with knowledge of Ruby ​​and also Jekyll. In this guide, we’ll walk you through the steps to customize the Chirpy theme and deploy it on GitHub Pages.
@@ -33,7 +34,7 @@ sudo apt-get install ruby-full build-essential zlib1g-dev
 gem install jekyll bundler
 ```
 
-### Set up environment variables to manage Ruby gems efficiently
+## Set up environment variables to manage Ruby gems efficiently
 
 ```sh
 echo '# Install Ruby Gems to ~/gems' >> ~/.bashrc
@@ -48,9 +49,9 @@ source ~/.bashrc
 
 This approach simplifies upgrades, isolates unnecessary files, and is perfect for users who want to focus on writing with minimal configuration.
 
-1. Sign in to GitHub and navigate to the [**chirpy-starter**](https://github.com/cotes2020/chirpy-starter).
-2. Click the <kbd>Use this template</kbd> button and then select <kbd>Create a new repository</kbd>.
-3. Name the new repository `<username>.github.io`, replacing `username` with your lowercase GitHub username.
+1. Sign in to GitHub and navigate to the [chirpy-starter](https://github.com/cotes2020/chirpy-starter)
+2. Click the <kbd>Use this template</kbd> button and then select <kbd>Create a new repository</kbd>
+3. Name the new repository `<username>.github.io`, replacing `username` with your lowercase GitHub username
 
 ### Forking the Theme
 
@@ -73,7 +74,7 @@ bundle
 To verify the site looks good locally, use the following command:
 
 ```sh
-bundle exec jekyll serve -H 0.0.0.0 -t
+bundle exec jekyll serve
 ```
 
 # Configure
@@ -111,7 +112,7 @@ These are the things you can change
 
 ## Configuring the Favicon
 
-The [favicons](https://www.favicon-generator.org/about/) of [Chirpy](https://github.com/cotes2020/jekyll-theme-chirpy/) are placed in the directory **assets/img/favicons/** You may want to replace them with your own. The following sections will guide you to create and replace the default favicons and If your Jekyll site doesn’t have this **assets/img/favicons/** directory yet, Just create one.
+The [Favicons](https://www.favicon-generator.org/about/) of [Chirpy](https://github.com/cotes2020/jekyll-theme-chirpy/) are placed in the directory **assets/img/favicons/** You may want to replace them with your own. The following sections will guide you to create and replace the default favicons and If your Jekyll site doesn’t have this **assets/img/favicons/** directory yet, Just create one.
 
 To make this whole process easier we are going to use this handy tool [Real Favicon Generator](https://realfavicongenerator.net/) to create all the required files.
 
