@@ -116,7 +116,7 @@ docker run hello-world
 
 This command will pull the [Hello World](https://hub.docker.com/_/hello-world) image from Docker Hub and run it in a container. If successful, you should see a confirmation message that Docker is working properly.
 
-### Step 9: Managing Docker with Docker Compose
+### Step 8: Managing Docker with Docker Compose
 
 [Docker Compose](https://docs.docker.com/compose/) is a tool for defining and running multi-container applications. For example, if you have an app that consists of a backend and a database, you can configure it using Docker Compose.
 
